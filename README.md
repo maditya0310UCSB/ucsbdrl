@@ -15,5 +15,5 @@ You will need to `activate` our environment each time you open a new terminal. U
 This isolates all `pip` or `conda` installs from your other environments or from your system-level Python installation.
 
 ### Update Conda Environment
-As the quarter progresses we may update the `environment.yml`. To update your local environment use:<br>
+As the quarter progresses we may update the `environment.yml`. To update your local environment, first `pull` the repo, then:<br>
 `conda env update -f=environment.yml`
