@@ -10,8 +10,8 @@ After installing Anaconda (and checking out or downloading this repo), create en
 This will install the Python packages needed to run our examples. (It may take a bit.)
 
 ### Activate Conda Environment
-You will need to `activate` our environment each time you open a new terminal. Use:
-`source activate ucsbdrl`
+You will need to `activate` our environment each time you open a new terminal. Use:<br>
+`source activate ucsbdrl`<br>
 This isolates all `pip` or `conda` installs from your other environments or from your system-level Python installation.
 
 ### Update Conda Environment
