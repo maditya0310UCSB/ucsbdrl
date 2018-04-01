@@ -6,4 +6,5 @@ We support Anaconda (https://www.anaconda.com/download) using Python 3.6. If you
 
 ### Create
 After installing Anaconda (and checking out or downloading this repo), create environment with:<br>
-`conda env create -f environment.yml`
+`conda env create -f environment.yml`<br>
+This will install the Python packages needed to run our examples.
