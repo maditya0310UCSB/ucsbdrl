@@ -16,5 +16,6 @@ This isolates all `pip` or `conda` installs from your other environments or from
 ### Install packages
 Ensure the `drl` environment is activated then:<br>
 `pip install tensorflow`<br>
+`pip install keras`<br>
 `conda install pytorch-cpu torchvision -c pytorch`<br>
 `pip install gym`
