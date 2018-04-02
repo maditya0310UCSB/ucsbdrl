@@ -6,7 +6,8 @@ We support Anaconda (https://www.anaconda.com/download) using Python 3.6. If you
 
 ### Create Conda Environment
 The following creates a conda environment called `drl`:<br>
-`conda create --name drl`
+`conda create --name drl`<br>
+
 
 ### Activate Conda Environment
 You will need to activate your environment each time you open a new terminal. Use:<br>
