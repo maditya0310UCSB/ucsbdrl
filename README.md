@@ -17,7 +17,7 @@ This isolates all `pip` or `conda` installs from your other environments or from
 ### Install packages
 Ensure the `drl` environment is activated, then:<br>
 `pip install tensorflow`<br>
-`pip install keras`<br>
+`conda install -c conda-forge keras`<br>
 `pip install gym`<br>
 <br>
 On Ubuntu<br>
