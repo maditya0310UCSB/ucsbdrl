@@ -14,6 +14,7 @@ You will need to activate your environment each time you open a new terminal.<br
 <br>
 MacOS and Ubuntu:<br>
 `source activate drl`<br>
+<br>
 Windows<br>
 `activate drl`<br>
 <br>
@@ -26,10 +27,10 @@ Ensure the `drl` environment is activated, then:<br>
 On Ubuntu:<br>
 `conda install pytorch-cpu torchvision -c pytorch`<br>
 <br>
-On MacOS:<br>
+MacOS:<br>
 `conda install pytorch torchvision -c pytorch`<br> 
 <br>
-On Windows 10:<br>
+Windows 10:<br>
 `conda install -c peterjc123 pytorch-cpu`<br>
 <br>
 We will also install ipython and a few other support packages. If you activated the `drl` environment, this will not touch your existing installations.
