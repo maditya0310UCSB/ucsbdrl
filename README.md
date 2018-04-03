@@ -15,7 +15,7 @@ You will need to activate your environment each time you open a new terminal.<br
 MacOS and Ubuntu:<br>
 `source activate drl`<br>
 <br>
-Windows<br>
+Windows 10:<br>
 `activate drl`<br>
 <br>
 This isolates all `pip` or `conda` installs from your other environments or from your system-level Python installation.
@@ -24,7 +24,7 @@ This isolates all `pip` or `conda` installs from your other environments or from
 Ensure the `drl` environment is activated, then:<br>
 `pip install gym`<br>
 <br>
-On Ubuntu:<br>
+Ubuntu:<br>
 `conda install pytorch-cpu torchvision -c pytorch`<br>
 <br>
 MacOS:<br>
