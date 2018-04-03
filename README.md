@@ -10,8 +10,13 @@ The following creates a conda environment called `drl`:<br>
 
 
 ### Activate Conda Environment
-You will need to activate your environment each time you open a new terminal. Use:<br>
+You will need to activate your environment each time you open a new terminal.<br>
+<br>
+MacOS and Ubuntu:<br>
 `source activate drl`<br>
+Windows<br>
+`activate drl`<br>
+<br>
 This isolates all `pip` or `conda` installs from your other environments or from your system-level Python installation.
 
 ### Install packages
@@ -23,3 +28,9 @@ On Ubuntu:<br>
 <br>
 On MacOS:<br>
 `conda install pytorch torchvision -c pytorch`<br> 
+<br>
+On Windows 10:<br>
+`conda install -c peterjc123 pytorch-cpu`<br>
+<br>
+We will also install ipython and a few other support packages. If you activated the `drl` environment, this will not touch your existing installations.
+`pip install ipython ipdb`
