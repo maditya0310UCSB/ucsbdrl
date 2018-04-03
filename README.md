@@ -33,5 +33,5 @@ MacOS:<br>
 Windows 10:<br>
 `conda install -c peterjc123 pytorch-cpu`<br>
 <br>
-We will also install ipython and a few other support packages. If you activated the `drl` environment, this will not touch your existing installations.
+We will also install ipython and a few other support packages. If you activated the `drl` environment, this will not touch your existing installations.<br>
 `pip install ipython ipdb`
