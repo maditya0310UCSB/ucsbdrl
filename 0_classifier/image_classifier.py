@@ -10,10 +10,12 @@ import torch.nn.functional as F
 
 import torch.optim as optim
 
+# tranform image values ranging from [0, 1] to [-0.5, 0.5]
 transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
+# load training and testing data 
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
                                         download=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4,
@@ -24,10 +26,12 @@ testset = torchvision.datasets.CIFAR10(root='./data', train=False,
 testloader = torch.utils.data.DataLoader(testset, batch_size=4,
                                          shuffle=False, num_workers=2)
 
+# labels for the images 
 classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
 
+# build the nerual network
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -47,12 +51,13 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 
-
 net = Net()
 
+# build the loss function
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
+# train the network
 for epoch in range(2):  # loop over the dataset multiple times
 
     running_loss = 0.0
@@ -81,6 +86,7 @@ for epoch in range(2):  # loop over the dataset multiple times
 
 print('Finished Training')
 
+# test the network 
 correct = 0
 total = 0
 for data in testloader:
