@@ -33,7 +33,7 @@ MacOS:<br>
 `pip install getch`<br>
 <br>
 Windows 10:<br>
-Install http://landinghub.visualstudio.com/visual-cpp-build-tools
+Install http://landinghub.visualstudio.com/visual-cpp-build-tools<br>
 `conda install -c peterjc123 pytorch-cpu`<br>
 `pip install torchvision`<br>
 `pip install getch`<br>
