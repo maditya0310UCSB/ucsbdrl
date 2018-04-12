@@ -1,5 +1,5 @@
 #==========================================================================  
-# Deep Q-Learning Starter Code 
+# Approximate Q-Learning Starter Code 
 # 
 # The code was initially written for UCSB Deep Reinforcement Learning Seminar 2018
 #
@@ -16,7 +16,7 @@ import time
 num_episodes = 2000
 max_steps = 99
 
-epsilon = 1 # change to 0.1 when you implement DQN
+epsilon = 1 # change to 0.1 when you implement Approximate Q-Learning
 
 def main():
 
@@ -38,7 +38,7 @@ def main():
                         
             step +=1
 
-            # the following two lines should be commented out during the trainning to fasten the process
+            # the following two lines should be commented out during the training to speed the learning process
             env.render()
             time.sleep(1)
 
