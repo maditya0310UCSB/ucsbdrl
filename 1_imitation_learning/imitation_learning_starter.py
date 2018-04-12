@@ -69,6 +69,26 @@ def main():
 		print("Episode finished after {} steps".format(step))
 
 		# train the network here 
+		# wrap observations and actions in Variables
+		observations = torch.FloatTensor(observations)
+		actions = torch.LongTensor(actions)
+
+		inputs, labels = Variable(observations), Variable(actions)
+
+		# zero the parameter gradients
+		optimizer.zero_grad()
+		#ipdb.set_trace()
+		
+		# forward + backward + optimize
+		outputs = net(inputs)
+		#print(outputs)
+		loss = criterion(outputs, labels)
+		print("Loss value: {}".format(loss))
+		
+		loss.backward()
+		optimizer.step()
+
+		print("Network updated!")
 
 	# evaluate the network when the training is finished 
 			
