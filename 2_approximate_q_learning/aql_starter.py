@@ -12,18 +12,37 @@ import gym
 import numpy as np
 import random
 import time
+import torch
+from torch.autograd import Variable
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import numpy as np
 
 num_episodes = 2000
 max_steps = 99
 
-epsilon = 1 # change to 0.1 when you implement Approximate Q-Learning
+epsilon = 0.1 # e-greedy policy 
+
+# build a one-layer network
+class Net(nn.Module):
+
+    def __init__(self):
+        super(Net, self).__init__()
+        self.fc1 = nn.Linear(16, 4)
+
+    def forward(self, x):
+        x = self.fc1(x)
+        return x
 
 def main():
 
     env = gym.make('FrozenLake-v0')
 
     print(env.action_space)
-    print(env.observation_space)
+    print(env.observation_space) # discrete finite observations
+
+    q_function = Net()
 
     for episode in range(num_episodes):
         
@@ -36,13 +55,21 @@ def main():
         #The Q-Network
         while step < max_steps:
                         
-            step +=1
+            step += 1
 
             # the following two lines should be commented out during the training to speed the learning process
             env.render()
             time.sleep(1)
 
             # Choose an action by greedily (with e chance of random action) from the Q-network
+            observation_vector = np.identity(16)[observation:observation+1]
+            print(observation_vector)
+
+            action_values = q_function(Variable(torch.FloatTensor(observation_vector)))
+            print(action_values)
+            
+            action = np.argmax(action_values.data.numpy())
+            print(action)
 
             if np.random.rand(1) < epsilon:
                 action = env.action_space.sample()
