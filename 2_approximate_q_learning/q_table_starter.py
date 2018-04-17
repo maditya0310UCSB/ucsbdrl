@@ -42,7 +42,7 @@ def main():
         done = False
         step = 0
         
-        #The Q-Network
+        # training sessions
         while step < max_steps:
                         
             step += 1
