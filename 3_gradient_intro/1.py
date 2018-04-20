@@ -49,11 +49,11 @@ for epoch in range(1000):
 	y_hat = net(x)
 	print(y_hat)
 
-	# Calculate the current loss 
+	# Calculate the current loss (want y_hat[2] to be equal to 934)
 	loss = loss_function(y_hat[2], y)
 	print(loss)
 
-	# Zero the gradients before running the backward pass
+	# Standard bookkeeping. Zero the gradients before running the backward pass
 	net.zero_grad()
 
 	# Calculate the gradient of the loss with respect to the NN parameters.
