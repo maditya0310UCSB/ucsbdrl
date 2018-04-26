@@ -52,7 +52,7 @@ def main():
             # time.sleep(1)
 
             # add noise to the table
-            if episode < 200:
+            if episode < 500:
                 action = np.argmax(q_table[observation,:] + np.random.randn(1,env.action_space.n)*(1./(episode+1)))
             else:
                 action = np.argmax(q_table[observation,:])
@@ -68,7 +68,10 @@ def main():
             observation_new, reward, done, info = env.step(action)
             
             # Update Q-Table
-            q_table[observation, action] += learning_rate * (reward + alpha * np.max(q_table[observation_new, :]) - q_table[observation, action]) 
+            if done:
+                q_table[observation, action] = reward
+            else:
+                q_table[observation, action] += learning_rate * (reward + alpha * np.max(q_table[observation_new, :]) - q_table[observation, action]) 
 
             rewards += reward
             observation = observation_new
