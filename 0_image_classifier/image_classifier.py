@@ -1,3 +1,16 @@
+#==========================================================================  
+# Image Classifier Working Code
+# 
+# The code was adapted from PyTorch.org
+# http://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html
+# 
+# The code initially served for UCSB Deep Reinforcement Learning Seminar 2018
+#
+# Authors: Jieliang (Rodger) Luo, Sam Green
+#
+# April 2nd, 2018
+#==========================================================================
+
 import torch
 import torchvision
 import torchvision.transforms as transforms

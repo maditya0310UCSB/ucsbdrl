@@ -24,6 +24,9 @@ This isolates all `pip` or `conda` installs from your other environments or from
 Ensure the `drl` environment is activated, then:<br>
 `pip install gym py-getch`<br>
 <br>
+In order to render Classic Contorl Envrionment, run:<br>
+`pip install cython 'gym[classic_control]'`<br>
+<br>
 Ubuntu:<br>
 `conda install pytorch-cpu torchvision -c pytorch`<br>
 <br>
@@ -36,3 +39,5 @@ Windows 10:<br>
 <br>
 We will also install ipython and a few other support packages. If you activated the `drl` environment, this will not touch your existing installations.<br>
 `pip install ipython ipdb`
+
+

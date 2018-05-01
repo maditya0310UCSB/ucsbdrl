@@ -1,11 +1,11 @@
 #==========================================================================  
-# Approximate Q-Learning Starter Code 
+# Q-Table Learning Starter Code 
 # 
 # The code was initially written for UCSB Deep Reinforcement Learning Seminar 2018
 #
 # Authors: Jieliang (Rodger) Luo, Sam Green
 #
-# April 11th, 2018
+# April 17th, 2018
 #==========================================================================
 
 import gym
@@ -24,17 +24,6 @@ max_steps = 99
 
 epsilon = 0.1 # e-greedy policy 
 
-# build a one-layer network
-class Net(nn.Module):
-
-    def __init__(self):
-        super(Net, self).__init__()
-        self.fc1 = nn.Linear(16, 4)
-
-    def forward(self, x):
-        x = self.fc1(x)
-        return x
-
 def main():
 
     env = gym.make('FrozenLake-v0')
@@ -42,7 +31,8 @@ def main():
     print(env.action_space)
     print(env.observation_space) # discrete finite observations
 
-    q_function = Net()
+    # initialize the table with all zeros
+    q_table = np.zeros([env.observation_space.n,env.action_space.n])
 
     for episode in range(num_episodes):
         
@@ -52,7 +42,7 @@ def main():
         done = False
         step = 0
         
-        #The Q-Network
+        # training sessions
         while step < max_steps:
                         
             step += 1
@@ -61,14 +51,8 @@ def main():
             env.render()
             time.sleep(1)
 
-            # Choose an action by greedily (with e chance of random action) from the Q-network
-            observation_vector = np.identity(16)[observation:observation+1]
-            print(observation_vector)
-
-            action_values = q_function(Variable(torch.FloatTensor(observation_vector)))
-            print(action_values)
-            
-            action = np.argmax(action_values.data.numpy())
+            # Choose an action by greedily (with e chance of random action) from the Q-table
+            action = np.argmax(q_table[observation,:])
             print(action)
 
             if np.random.rand(1) < epsilon:
@@ -77,13 +61,7 @@ def main():
             #Get new state and reward from environment
             observation_new, reward, done, info = env.step(action)
             
-            #Obtain the Q' values by feeding the new state through our network
-
-            
-            #Obtain maxQ' and set our target value for chosen action.
-
-            
-            #Train our network using target and predicted Q values
+            # Update Q-Table
 
             rewards += reward
             observation = observation_new
